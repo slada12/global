@@ -36,7 +36,7 @@ async function track() {
   
     //   document.getElementById('submit_wpcargo').value = 'TRACK RESULT'
       sessionStorage.setItem('doc', JSON.stringify(doc));
-      document.location.href = '/track-data.html';
+      document.location.href = '/track.html';
     } catch (error) {
       document.getElementById('submit_wpcargo').value = 'Refresh'
       console.log(error);
