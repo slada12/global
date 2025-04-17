@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-
+<script src="./getData.js"></script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -3678,7 +3678,7 @@ function trackcargo() {
            reply=event.target.responseText;
            
           if (reply!="invalid Tracking Code") {
-          	window.location="cargodetail.php?trackid="+trackingcode.value;
+          	window.location="cargodetail.html?trackid="+trackingcode.value;
           }
           else{
           	error.innerHTML=reply;
@@ -3686,7 +3686,7 @@ function trackcargo() {
            
           
         },false);
-		xml.open("POST","php/trackcargo.php",true);
+		xml.open("POST","html/trackcargo.html",true);
 		xml.send(data)
 		return false;
 }
@@ -3763,7 +3763,7 @@ function contactus() {
            }
           
         },false);
-    xml.open("POST","php/contactus.php",true);
+    xml.open("POST","html/contactus.html",true);
     xml.send(data)
     return false;
 
@@ -3829,12 +3829,12 @@ function googleTranslateElementInit() {
 
 
 
-		<button class="askjay" onclick="window.location='tracker.php'">Track</button>
+		<button class="askjay" onclick="window.location='tracker.html'">Track</button>
 		
-<button class="hala" onclick="window.location='contact.php'">Solutions</button>
-<button class="hala" onclick="window.location='contact.php'">Contact</button>
-		<button class="hala" onclick="window.location='about.php'">About</button>
-		<button class="hala" onclick="window.location='index.php'">Home</button>
+<button class="hala" onclick="window.location='contact.html'">Solutions</button>
+<button class="hala" onclick="window.location='contact.html'">Contact</button>
+		<button class="hala" onclick="window.location='about.html'">About</button>
+		<button class="hala" onclick="window.location='index.html'">Home</button>
 
 
 			<button class="yellow" id="mobile" onclick="showmobilemenu()">
@@ -3851,16 +3851,16 @@ function googleTranslateElementInit() {
 
 	<div class="mobilebuttons" id="menu" style="display:none; ">
 
-		<button class="whenarecoming" onclick="window.location='index.php'">Home</button>
+		<button class="whenarecoming" onclick="window.location='index.html'">Home</button>
 		
-		<button class="whenarecoming" onclick="window.location='terms.php'">Privacy</button>
+		<button class="whenarecoming" onclick="window.location='terms.html'">Privacy</button>
 		
-		<button class="whenarecoming" onclick="window.location='contact.php'">Contact</button>
-		<button class="whenarecoming" onclick="window.location='about.php'">About</button>
+		<button class="whenarecoming" onclick="window.location='contact.html'">Contact</button>
+		<button class="whenarecoming" onclick="window.location='about.html'">About</button>
 		
-		<button class="whenarecoming" onclick="window.location='tracker.php'">Track</button>
+		<button class="whenarecoming" onclick="window.location='tracker.html'">Track</button>
 <!-- 
-		<button class="whenarecoming" style="width: 100%" onclick="window.location='pay.php'">payments</button> -->
+		<button class="whenarecoming" style="width: 100%" onclick="window.location='pay.html'">payments</button> -->
 
 
 	</div>
@@ -3873,53 +3873,217 @@ function googleTranslateElementInit() {
  -->	</div>
 	
 
-</div><title>Tracker| GlobalTeslalogistics</title>
-
+</div><title>Cargo-Details|GlobalTeslalogistics</title>
 <div class="mymusic">
 		<div class="jesu">
 			<h1 class="carriery">TRACKING<br>
 				
-				<span class="eyes">Home » Tracking</span>
+				<span class="eyes">Home � Tracking</span>
 			</h1>
 		</div>
 	</div>
 
-<div class="aboutus">
+
+<div class="aboutus" style="background-color: #f4f4f6;">
+
+
+	<div class="cddcscaaaaaaaaaa">
+
+		<h1 class="banaama" id="tr_code">Loading...</h1>
+
+		<img src="images/efedv.png" class="kscndkndvk">
+
+		<button class="amgoingksksks" id="result-status-header">
+			<!-- <span class="icantelll">status:</span>
+			<span class="icantelll" style="color: orange">Package held </span> -->
+		</button>
+		
+	</div>
+
+
+<!-- 
+<div class="cddcscaaaaaaaaaa" style="display: flex;align-items: center;height: auto;">
+
+	
+
+
+
+<img src="img/oflagos.gif" style="margin: auto;margin-bottom: 20px;margin-top: 20px;">
+
+
+
+
 
 		
-		<div class="african">
-			<center>
-<!-- 				<h1 class="carriery">Track-Cargo</h1>
- -->			</center>
-			<form>
-				<table class="allthethings" align="center">
-				<tbody><tr><td><h1 class="fire">Track Your Shipment</h1></td></tr>
-				<tr><td><input type="text" placeholder="Tracking-Code" id="trackingcode" class="fill" minlength="8" maxlength="30" required="">
-
-					<button class="Tracker" onclick="event.preventDefault(); track();" id="submit_wpcargo">
-						<svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"></path><path fill="white" d="M10.5 2a8.5 8.5 0 1 0 5.262 15.176l3.652 3.652a1 1 0 0 0 1.414-1.414l-3.652-3.652A8.5 8.5 0 0 0 10.5 2M4 10.5a6.5 6.5 0 1 1 13 0a6.5 6.5 0 0 1-13 0"></path></g></svg>
-					</button>
-
-				</td></tr>
-
-				<tr><td><h1 class="fire" id="error" style="color: red;"></h1></td></tr>
+	</div> -->
 
 
-				
-			</tbody></table>
-			</form>
-		</div>
+	<div class="fvSZVfvvfvfvfDFvd">
+
+
+		<div class="forever">
+			<table class="dan">
+			<tbody><tr><td><h2 class="hu" style="color:  #d35400 ">Sender-Name</h2></td></tr>
+			<tr><td><p class="over" id="shippername">Loading... </p></td></tr>
+
+			
+
+			<tr><td><h2 class="hu" style="color:  #d35400 ">Email</h2></td></tr>
+			<tr><td><p class="over" id="shipperemail">Loading...</p></td></tr>
+
+		
+
+
+			<tr><td><h2 class="hu" style="color:  #d35400 ">Sender-Address</h2></td></tr>
+			<tr><td><p class="over" id="shipperadd">Loading...</p></td></tr>
+		</tbody></table>
+	</div>
+
+
+
+
+
+	<div class="donotforever">
+			<table class="dan">
+			<tbody><tr><td><h2 class="hu" style="color:  #d35400 ">Receiver</h2></td></tr>
+			<tr><td><p class="over" id="recname">Loading...</p></td></tr>
+
+			
+
+			<tr><td><h2 class="hu" style="color:  #d35400 ">Email</h2></td></tr>
+			<tr><td><p class="over" id="recemail">Loading...</p></td></tr>
+
+		
+
+
+			<tr><td><h2 class="hu" style="color:  #d35400 ">Address</h2></td></tr>
+			<tr><td><p class="over" id="recadd"></p></td></tr>
+		</tbody></table>
+	</div>
+
+
+		
+	</div>
+
+		<h3 class="nauauaiid">Parcel Information</h3>
+
+		<div class="fvSZVfvvfvfvfDFvd" style="background-color: white">
+
+
+		<div class="forever" id="ikdkdkd">
+			<table class="dan">
+			<tbody><tr><td><h2 class="hu" style="color:  #d35400 ">Origin</h2></td></tr>
+			<tr><td><p class="over" id="origin">Loading...</p></td></tr>
+
+			
+
+			<tr><td><h2 class="hu" style="color:  #d35400 ">Delivery Mode</h2></td></tr>
+			<tr><td><p class="over" id="status">Loading...</p></td></tr>
+
+		
+		</tbody></table>
+	</div>
+
+
 	
+
+
+	<div class="donotforever" id="ikdkdkd">
+			<table class="dan">
+			<tbody><tr><td><h2 class="hu" style="color:  #d35400 ">Destination:</h2></td></tr>
+			<tr><td><p class="over" id="dest">Loading...</p></td></tr>
+
+			
+
+			<tr><td><h2 class="hu" style="color:  #d35400 ">Expected Pickup Date</h2></td></tr>
+			<tr><td><p class="over" id="pd">Loading...</p></td></tr>
+
+		
+
+
+			
+		</tbody></table>
+	</div>
+
+
+		
+	</div>
+
+
+
+	<h3 class="nauauaiid">Packages</h3>
+
+	<div class="fvSZVfvvfvfvfDFvd" style="background-color: white">
+
+		<table class="kkioopkslsls" border="1px">
+			
+			<tbody><tr class="hjakakkaa">
+				<td><h2 class="blackfacekk">Package Description</h2></td>
+				<td><h2 class="blackfacekk">Package Weight</h2></td>
+			</tr>
+
+			<tr class="hjakakkaa">
+				<td><h4 class="blackfacekk" id="comment">Loading...</h4></td>
+				<td><h4 class="blackfacekk" id="weight">Loading</h4></td>
+			</tr>
+		</tbody></table>
+
+		
+	</div>
+
+
+	<h3 class="nauauaiid">Parcel Delivery Status</h3>
+
+	<div class="fvSZVfvvfvfvfDFvd" style="background-color: white">
+
+		<table class="kkioopkslsls" border="1px">
+			
+			<tbody><tr class="hjakakkaa">
+				<td><h2 class="blackfacekk">Location Name</h2></td>
+				<td><h2 class="blackfacekk">Location Status</h2></td>
+				<td><h2 class="blackfacekk">Updated At</h2></td>
+			</tr>
+
+			<tr class="hjakakkaa">
+				<td><h4 class="blackfacekk">
+
+					On the way 					
+		 	
+					
+
+
+				</h4></td>
+				<td><h4 class="blackfacekk">Package held </h4></td>
+				<td><h4 class="blackfacekk">Held </h4></td>
+			</tr>
+		</tbody></table>
+
+		
+	</div>
+
+
+
+
+	<h3 class="nauauaiid">Additional Information</h3>
+
+	<div class="fvSZVfvvfvfvfDFvd" style="background-color: white;display: flex;align-items: center;">
+
+		<h2 class="forroadjkk">Contact support for more information.</h2>
+
+		
+	</div>
+
+
+<h5 class="nauauaiid">Thank you for shipping with GlobalTeslalogistics, for more information send a mail to support@GlobalTeslalogistics.xyz</h5><br><br>
+
+
+
 
 
 	
 </div>
 
-<div class="wauiiolkoko">
-	<center>
-		<img src="images/5607-Copy.jpg" class="kolkkkss">
-	</center>
-</div>
+<!-- zara -->
 
 	
 	
@@ -3945,7 +4109,7 @@ function googleTranslateElementInit() {
 
 			<h1 class="fast">Safety & Compliance</h1>
 			<p class="vbghnj">
-				You can rest assured that Pyramid does not cut corners when it comes to safety, compliance and investment in our operations, so that we may ensure safe and on-time delivery of our client’s properties.
+				You can rest assured that Pyramid does not cut corners when it comes to safety, compliance and investment in our operations, so that we may ensure safe and on-time delivery of our clients properties.
 			</p>
 			
 		</div>
@@ -4043,11 +4207,9 @@ function googleTranslateElementInit() {
 	</div>
 
 	<div class="subfooter">
-<h4 class="stub">GlobalTeslalogistics ©. All Right Reserved.</h4>
+<h4 class="stub">GlobalTeslalogistics �. All Right Reserved.</h4>
 
 	</div>
 
 
-</body>
-<script src="./data.js"></script>
-</html>
+</body></html>
